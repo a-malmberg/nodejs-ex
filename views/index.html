@@ -6,7 +6,34 @@
 
 <html lang = "en">
     <head>
-		<link rel="stylesheet" href="stylesheet.css">
+      <style>
+        body {
+          background-color: lightgray;
+        }
+
+        h1 {
+          color: navy;
+          margin-left: 20px;
+          font-family:Helvetica;
+          font-size:40px;
+        }
+
+        h2 {
+        	color: green;
+        	margin-left:20px;
+        	font-family:Helvetica;
+        	font-size;20px;
+        }
+
+        p {
+        	color: black;
+        	font-family: Arial;
+        	margin-left: 20px;
+        	font-size; 10px;
+        }
+        </style>
+        
+<!--		<link rel="stylesheet" href="stylesheet.css">-->
         <meta charset= "utf-8" />
         <title>CSC-227 Final Project</title>
     </head>
@@ -14,30 +41,31 @@
         <h1>Anna Malmberg</h1>
         <p>amalmberg@my.waketech.edu</p>
         <p>Data Science and Programming Support Services</p>
-		
+
 		<p> Click the button to receive a book recommendation!</p>
-		
+
 		<p> <button id ="book" onclick="myFunction()">Click for Book!</button></p>
-		
+
 		<h2 id="book_result"></h2>
 
 		<script>
-		const jsonData = 
+		const jsonData =
 			{"001":"Kjell Westo: Yellow Sulphur Sky" , "011": "Ed Greenwood: Elminster: The Making of a Mage",
 			"002":"Joakim Zander: The Swimmer",
 			"012": "Leo Tolstoy: Anna Karenina",
 			"003":"Camilla Lackberg: The Girl in the Woods",}
-			
+
 		const values = Object.values(jsonData)
-		
+
 		const randomValue = values[parseInt(Math.random() * values.length)]
-		
+
 			function myFunction() {
 <!--			document.getElementById("book").innerHTML = randomValue;    ##this creates the book name on the button-->
 <!--			alert("Your book suggestion is: "+randomValue); ##this creates a popup -->
 				document.getElementById("book_result").innerHTML = "Your book suggestion is: "+randomValue;
+        document.getElementById("book").remove();
 			}
-		
+
 			document.getElementById("book").onclick = function() {myFunction()};
 
 
